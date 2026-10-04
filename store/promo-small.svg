@@ -14,11 +14,11 @@
     <path d="M22.5 36h22.5M37.5 28.5l7.5 7.5-7.5 7.5" fill="none" stroke="#fff" stroke-width="5.2" stroke-linecap="round" stroke-linejoin="round"/>
   </g>
   <text x="128" y="84" font-family="system-ui, sans-serif" font-size="34" font-weight="700" fill="#fff">Go to URL</text>
-  <text x="128" y="112" font-family="system-ui, sans-serif" font-size="16" fill="#aab3d1">Address bar &amp; tab switcher</text>
+  <text x="128" y="112" font-family="system-ui, sans-serif" font-size="15" fill="#aab3d1">Fullscreen address bar &amp; tab switcher</text>
   <g font-family="ui-monospace, monospace" font-size="15" fill="#ddd">
     <rect x="36" y="168" width="64" height="30" rx="6" fill="#2b2b31" stroke="#7c9cff"/>
     <text x="68" y="188" text-anchor="middle">Alt+G</text>
   </g>
   <text x="114" y="188" font-family="system-ui, sans-serif" font-size="17" fill="#e8e8ee">Type a URL, search, or jump to a tab</text>
-  <text x="36" y="236" font-family="system-ui, sans-serif" font-size="15" fill="#8a8fa3">Works in fullscreen, where the address bar hides.</text>
+  <text x="36" y="236" font-family="system-ui, sans-serif" font-size="14" fill="#8a8fa3">Private: no site access until you press it. Nothing collected.</text>
 </svg>

@@ -1,0 +1,43 @@
+Chrome in fullscreen hides the address bar and the tab strip. Press Alt+G and a prompt appears over the page: type an address, a search or the name of a tab, press Enter, and you are there. You never left fullscreen.
+
+I found out why this was needed the hard way. Chrome was fullscreen on Hyprland. I pressed Ctrl+L, typed example.com and pressed Enter. The text went into the chat box of the web page I was on.
+
+That is the whole problem. In fullscreen (F11, or a tiling window manager's fullscreen in Hyprland, i3 or sway), Chrome has no address bar to type into and no tab strip to click.
+
+WHAT YOU TYPE
+• An address (example.com, localhost:3000) opens that address.
+• Anything else is searched with your default search engine.
+
+THE KEYS ARE CHROME'S KEYS
+Nothing new to learn. The prompt uses the same keys as Chrome's own address bar:
+• Enter: open in this tab
+• Alt+Enter: open in a new tab
+• Shift+Enter: open in a new window
+Hints at the bottom show what Enter will do. Hold Alt or Shift and the highlight moves with you.
+
+THE TAB SWITCHER
+The same prompt lists your open tabs. Type to filter, ↑↓ to pick, Enter to jump. Any tab, not just the first eight.
+
+Each tab is labeled with the shortcut Chrome already has for it: Ctrl+1 through Ctrl+8, and Ctrl+9 for the last tab (⌘ on Mac). Those shortcuts are in every copy of Chrome and always have been. Chrome never showed them to you. This does. After a while you will press Ctrl+3 before you think to press Alt+G, and that is the point.
+
+• Del closes the selected tab.
+• Ctrl+Z (⌘Z) brings it back, with its back and forward history, in its old spot.
+
+WHO THIS IS FOR
+• Anyone who reads, writes or watches in fullscreen (F11)
+• Presenters who need to get somewhere mid-talk without breaking the screen
+• Keyboard-first people who would rather not reach for the mouse
+• Tiling window manager people: Hyprland, i3, sway, GNOME
+• Small laptops, where the address bar and tab strip cost real space
+
+WHAT IT CAN'T SEE
+I wanted this to be the kind of extension I would be comfortable installing myself, so:
+• It has no access to any website until you press Alt+G, and then only the tab you are on.
+• It does not ask for the "Read and change all your data on all websites" permission. Look for that line when you install it. You will not find it.
+• No data collection, no analytics, no network requests of any kind.
+• Open source, MIT: github.com/nacusiancii/go-to-url. You can read the whole thing.
+
+THE SMALL PRINT
+Alt+G is the default. Change it at chrome://extensions/shortcuts.
+
+It was built in one afternoon by one person who kept saying "just one more feature." The Ctrl+D shortcut for donations was a joke and did not go in. Everything above did.

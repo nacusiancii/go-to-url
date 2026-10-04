@@ -7,38 +7,15 @@ Run `./package.sh` from the repo root, then upload `dist/go-to-url-1.0.0.zip`.
 
 ## Store listing tab
 
-**Name** (taken from the manifest): Go to URL — address bar & tab switcher
+**Name** (taken from the manifest): Go to URL: Fullscreen Address Bar & Tab Switcher
 
-**Summary** (taken from the manifest): Alt+G: type a URL, search, or switch, close and reopen tabs — even in fullscreen, where the address bar is hidden.
+**Summary** (taken from the manifest): Chrome in fullscreen (F11) hides the address bar. Press Alt+G: type an address or search, switch tabs. You never leave fullscreen.
 
 **Category:** Tools (or Workflow & Planning)
 
 **Language:** English
 
-**Description:**
-
-In fullscreen, Chrome hides the address bar and the tab strip. Go to URL brings both back as one keyboard prompt, without leaving fullscreen.
-
-Press Alt+G and type:
-• An address, like example.com or localhost:3000. Enter opens it.
-• Anything else, and it's searched with your default search engine.
-• Part of a tab's title or address, and the matching tabs appear underneath.
-
-Same keys as Chrome's address bar:
-• Enter: open in this tab
-• Alt+Enter: open in a new tab
-• Shift+Enter: open in a new window
-
-Tab switcher:
-• Every tab is labeled with the Ctrl+number Chrome already uses for it (⌘ on Mac), so you learn the shortcuts as you go.
-• ↑ ↓ and Enter switch to any tab, including the ones past the 8th.
-• Del closes the selected tab. Ctrl+Z reopens it, with its history, in the same spot.
-
-Hints at the bottom of the prompt always show what Enter will do. Hold Alt or Shift to see the highlight move.
-
-You can change the Alt+G shortcut at chrome://extensions/shortcuts.
-
-Private by design: no data collection, no network requests, no analytics.
+**Description:** paste the contents of `description.txt` as is. It's plain text, which is what the store expects.
 
 **Graphic assets:**
 - Store icon: `../icons/icon128.png`
