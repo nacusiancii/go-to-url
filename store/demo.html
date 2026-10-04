@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Demo</title>
+<style>
+  body { margin: 0; font: 16px/1.6 Georgia, serif; background: #faf8f4; color: #2a2a2a; }
+  article { max-width: 720px; margin: 0 auto; padding: 64px 24px; }
+  h1 { font-size: 40px; line-height: 1.2; margin: 0 0 8px; }
+  .meta { color: #888; font: 14px system-ui, sans-serif; margin-bottom: 32px; }
+  p { margin: 0 0 20px; }
+</style>
+</head>
+<body>
+<article>
+  <h1>Notes on writing a small tiling window manager</h1>
+  <div class="meta">12 min read</div>
+  <p>Most of the work in a window manager is not tiling. It is everything around tiling: focus rules, floating dialogs that refuse to stay where you put them, and the long tail of applications that each have their own idea of what "fullscreen" means.</p>
+  <p>Fullscreen is where browsers get interesting. Press F11 and the toolbar disappears, which is the point, until you want to go somewhere else and realise the address bar went with it.</p>
+  <p>The layout code itself turned out to be about two hundred lines. A binary tree of splits, a ratio per node, and a function that walks the tree handing out rectangles. Everything else is bookkeeping.</p>
+  <p>The part that took longest was deciding what should happen when a window asks to be fullscreen while another one already is. There is no right answer, only a choice you have to make and then document.</p>
+</article>
+<script>
+// Stubs for the extension APIs ui.js uses, so the real prompt renders on a plain page.
+const state = new URLSearchParams(location.search).get("state") || "list";
+const favColors = { "github.com": "#24292f", "news.ycombinator.com": "#ff6600", "developer.mozilla.org": "#1b1b1b",
+  "doc.rust-lang.org": "#b7410e", "www.youtube.com": "#ff0033", "en.wikipedia.org": "#636466",
+  "blog.example.dev": "#5a6fe0", "wiki.archlinux.org": "#1793d1", "calendar.example.com": "#1a73e8",
+  "music.example.com": "#1db954", "maps.example.com": "#34a853" };
+let tabs = [
+  ["GitHub · rust-lang/rust: Empowering everyone to build reliable software", "https://github.com/rust-lang/rust"],
+  ["Hacker News", "https://news.ycombinator.com/"],
+  ["Array.prototype.findLast() - JavaScript | MDN", "https://developer.mozilla.org/en-US/docs/Web/JavaScript"],
+  ["The Rust Programming Language", "https://doc.rust-lang.org/book/"],
+  ["Notes on writing a small tiling window manager", "https://blog.example.dev/tiling-wm"],
+  ["Wayland - ArchWiki", "https://wiki.archlinux.org/title/Wayland"],
+  ["Lo-fi beats to code to", "https://www.youtube.com/watch?v=demo"],
+  ["Tiling window manager - Wikipedia", "https://en.wikipedia.org/wiki/Tiling_window_manager"],
+  ["Calendar - Week of Oct 5", "https://calendar.example.com/week"],
+  ["Rust by Example", "https://doc.rust-lang.org/rust-by-example/"],
+  ["Discover Weekly", "https://music.example.com/playlist"],
+].map(([title, url], i, all) => ({ id: i + 1, title, url, active: i === 4, position: i + 1,
+  shortcut: i < 8 ? i + 1 : i === all.length - 1 ? 9 : null }));
+const renumber = () => tabs.forEach((t, i) => { t.position = i + 1;
+  t.shortcut = i < 8 ? i + 1 : i === tabs.length - 1 ? 9 : null; });
+
+window.chrome = {
+  runtime: {
+    getURL(path) {
+      const host = new URL(new URL(path, "https://x").searchParams.get("pageUrl")).host;
+      const letters = { "blog.example.dev": "N", "calendar.example.com": "C", "music.example.com": "M", "www.youtube.com": "▶" };
+      const letter = letters[host] || host.replace(/^(www|en|doc|wiki|news|developer)\./, "")[0].toUpperCase();
+      const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><rect width="32" height="32" rx="7" fill="${favColors[host] || "#666"}"/><text x="16" y="22.5" font-family="system-ui,sans-serif" font-size="18" font-weight="700" fill="#fff" text-anchor="middle">${letter}</text></svg>`;
+      return "data:image/svg+xml," + encodeURIComponent(svg);
+    },
+    async sendMessage(msg) {
+      if (msg.type === "tabs") return tabs;
+      if (msg.type === "closeTab") { tabs = tabs.filter((t) => t.id !== msg.tabId); renumber(); return { sessionId: "s", tabs }; }
+    },
+  },
+};
+if (new URLSearchParams(location.search).has("mac")) Object.defineProperty(Navigator.prototype, "userAgentData", { get: () => ({ platform: "macOS" }) });
+// The prompt uses a closed shadow root; open it here so the demo can drive it.
+const attach = Element.prototype.attachShadow;
+Element.prototype.attachShadow = function () { return attach.call(this, { mode: "open" }); };
+</script>
+<script src="../url.js"></script>
+<script src="../ui.js"></script>
+<script>
+const input = document.getElementById("__goto-url-prompt__").shadowRoot.querySelector("input");
+const key = (k, extra = {}) => input.dispatchEvent(new KeyboardEvent("keydown", { key: k, bubbles: true, ...extra }));
+setTimeout(() => {
+  if (state === "search") {
+    input.value = "rust";
+    input.dispatchEvent(new Event("input"));
+    key("Alt", { altKey: true }); // show the Alt+Enter hint lit
+  } else if (state === "close") {
+    key("ArrowDown"); key("ArrowDown"); // select a background tab
+    key("Delete");
+    setTimeout(() => key("ArrowUp"), 50); // land on another tab so the Del hint shows too
+  }
+}, 50);
+</script>
+</body>
+</html>

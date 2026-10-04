@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="280" viewBox="0 0 440 280">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2a2f45"/><stop offset="1" stop-color="#17171b"/>
+    </linearGradient>
+    <linearGradient id="ic" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8aa6ff"/><stop offset="1" stop-color="#5a6fe0"/>
+    </linearGradient>
+  </defs>
+  <rect width="440" height="280" fill="url(#bg)"/>
+  <g transform="translate(36 52)">
+    <rect width="72" height="72" rx="17" fill="url(#ic)"/>
+    <rect x="10.5" y="21" width="51" height="30" rx="7.5" fill="#1f1f23"/>
+    <path d="M22.5 36h22.5M37.5 28.5l7.5 7.5-7.5 7.5" fill="none" stroke="#fff" stroke-width="5.2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="128" y="84" font-family="system-ui, sans-serif" font-size="34" font-weight="700" fill="#fff">Go to URL</text>
+  <text x="128" y="112" font-family="system-ui, sans-serif" font-size="16" fill="#aab3d1">Address bar &amp; tab switcher</text>
+  <g font-family="ui-monospace, monospace" font-size="15" fill="#ddd">
+    <rect x="36" y="168" width="64" height="30" rx="6" fill="#2b2b31" stroke="#7c9cff"/>
+    <text x="68" y="188" text-anchor="middle">Alt+G</text>
+  </g>
+  <text x="114" y="188" font-family="system-ui, sans-serif" font-size="17" fill="#e8e8ee">Type a URL, search, or jump to a tab</text>
+  <text x="36" y="236" font-family="system-ui, sans-serif" font-size="15" fill="#8a8fa3">Works in fullscreen, where the address bar hides.</text>
+</svg>

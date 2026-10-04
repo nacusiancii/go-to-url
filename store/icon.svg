@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8aa6ff"/>
+      <stop offset="1" stop-color="#5a6fe0"/>
+    </linearGradient>
+  </defs>
+  <!-- 96px artwork inside 16px transparent padding, per Web Store icon guidance -->
+  <rect x="16" y="16" width="96" height="96" rx="22" fill="url(#bg)"/>
+  <rect x="30" y="44" width="68" height="40" rx="10" fill="#1f1f23"/>
+  <path d="M46 64h30M66 54l10 10-10 10" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
