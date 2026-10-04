@@ -3,13 +3,13 @@
 Copy each section into the matching field in the Developer Dashboard.
 
 ## Package
-Run `./package.sh` from the repo root, then upload `dist/go-to-url-1.0.0.zip`.
+Run `./package.sh` from the repo root, then upload `dist/go-to-url-1.0.1.zip`.
 
 ## Store listing tab
 
 **Name** (taken from the manifest): Go to URL: Fullscreen Address Bar & Tab Switcher
 
-**Summary** (taken from the manifest): Chrome in fullscreen (F11) hides the address bar. Press Alt+G: type an address or search, switch tabs. You never leave fullscreen.
+**Summary** (taken from the manifest): Keep Chrome fullscreen and your attention on the page. Alt+G to go anywhere or switch tabs, then it gets out of your way.
 
 **Category:** Tools (or Workflow & Planning)
 

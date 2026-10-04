@@ -1,8 +1,8 @@
-Chrome in fullscreen hides the address bar and the tab strip. Press Alt+G and a prompt appears over the page: type an address, a search or the name of a tab, press Enter, and you are there. You never left fullscreen.
+Keep Chrome fullscreen and give the page your whole attention. When you want another site or another tab, press Alt+G, type an address or a few letters of a tab, and press Enter. The prompt disappears and you are back on the page.
 
-I found out why this was needed the hard way. Chrome was fullscreen on Hyprland. I pressed Ctrl+L, typed example.com and pressed Enter. The text went into the chat box of the web page I was on.
+Going to a site and switching tabs are two of the things you do most often in a browser, and each one pulls you out of what you were doing: leave fullscreen, reach for the mouse, hunt through the tab strip, find your place again. Go to URL turns both into a keystroke, so your eyes and hands never leave the page.
 
-That is the whole problem. In fullscreen (F11, or a tiling window manager's fullscreen in Hyprland, i3 or sway), Chrome has no address bar to type into and no tab strip to click.
+It started when I pressed Ctrl+L in fullscreen Chrome on Hyprland, typed example.com, and watched it land in the chat box of the page I was reading. Fullscreen hides the address bar and the tab strip (F11, or the fullscreen of Hyprland, i3 or sway), and Chrome gives you no way to reach them without leaving it. Now there is one.
 
 WHAT YOU TYPE
 • An address (example.com, localhost:3000) opens that address.
@@ -24,7 +24,7 @@ Each tab is labeled with the shortcut Chrome already has for it: Ctrl+1 through 
 • Ctrl+Z (⌘Z) brings it back, with its back and forward history, in its old spot.
 
 WHO THIS IS FOR
-• Anyone who reads, writes or watches in fullscreen (F11)
+• Anyone who wants the page, and only the page, on screen while they read, write or watch
 • Presenters who need to get somewhere mid-talk without breaking the screen
 • Keyboard-first people who would rather not reach for the mouse
 • Tiling window manager people: Hyprland, i3, sway, GNOME

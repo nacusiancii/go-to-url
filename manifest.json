@@ -2,8 +2,8 @@
   "manifest_version": 3,
   "name": "Go to URL: Fullscreen Address Bar & Tab Switcher",
   "short_name": "Go to URL",
-  "version": "1.0.0",
-  "description": "Chrome in fullscreen (F11) hides the address bar. Press Alt+G: type an address or search, switch tabs. You never leave fullscreen.",
+  "version": "1.0.1",
+  "description": "Keep Chrome fullscreen and your attention on the page. Alt+G to go anywhere or switch tabs, then it gets out of your way.",
   "icons": {
     "16": "icons/icon16.png",
     "32": "icons/icon32.png",
